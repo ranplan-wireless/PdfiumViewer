@@ -3,7 +3,7 @@
     <OutputType>Library</OutputType>
     <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <TargetFrameworks>net20;net45;netcoreapp3.1;net6.0-windows</TargetFrameworks>
+    <TargetFrameworks>net20;net462;</TargetFrameworks>
     <UseWindowsForms>true</UseWindowsForms>
     <AssemblyTitle>PdfViewer</AssemblyTitle>
     <Company>Pieter van Ginkel</Company>
@@ -19,6 +19,7 @@
     <DocumentationFile>bin\$(Configuration)\PdfiumViewer.xml</DocumentationFile>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'net20' Or '$(TargetFramework)' == 'net45'">
     <Reference Include="System.Windows.Forms" />
@@ -73,5 +74,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="pan.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="PDFium.x64" Version="4648.0.0" />
+    <PackageReference Include="PDFium.x86" Version="4648.0.0" />
   </ItemGroup>
 </Project>
